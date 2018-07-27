@@ -1,0 +1,67 @@
+<% include partes/cabecera%>
+<nav class="navbar navbar-dark bg-dark mb-4">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a href="/" class="navbar-brand">Inicio</a>
+      <a href="/modelo" class="navbar-brand">Consultas</a>
+
+    </li>
+  </ul>
+
+
+</nav>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-7">
+          <table class="table table-bordered">
+            <thead> <!--  cabecera -->
+              <!--fila  -->
+              <tr>
+                <!-- atributos o cabeceras -->
+                <th>Numero de historia clinica</th>
+                <th>Nombre del paciente</th>
+                <th>Institucion</th>
+                <th>Opciones</th>
+              </tr>
+            </thead>
+            <!-- cuerpo -->
+            <tbody>
+              <% if(data){ %>
+                 <% for(var i = 0;i < data.length;i++) { %>
+                   <tr>
+                     <td><%= data[i].numero_historia%></td>
+                     <td><%= data[i].nombres_paciente%></td>
+                     <td><%= data[i].institucion%></td>
+
+                     <td> <a href="/modelo/consulta1/borrar/<%= data[i].numero_historia %>" class="btn btn-outline-danger form-control ">Borrar</a>
+                          <a href="/modelo/consulta1/actualizar1/<%= data[i].numero_historia %>" class="btn btn-outline-success form-control">actualizr</a>
+                     </td>
+                   </tr>
+                   <% } %>
+              <% } %>
+
+            </tbody>
+
+          </table>
+        </div>
+
+        <!-- <div class="col-md-5">
+            <div class="card">
+              <div class="card-header">Registrar </div>
+                <div class="card-body">
+                  <form class="" action="/Insertar" method="POST">
+                    <div class="form-group">
+                      <label for="">Inserte Letra</label>
+                      <input type="text" name="letra" value="" class="form-control">
+                    </div>
+                    <div class="">
+                      <input type="submit"  value="Consultar" class="btn btn-primary btn-block">
+                    </div>
+                  </form>
+
+                </div>
+            </div>
+        </div> -->
+      </div>
+    </div>
+<% include  partes/pie %>

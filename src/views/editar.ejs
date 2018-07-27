@@ -1,0 +1,40 @@
+<% include partes/cabecera%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-5">
+          <div class="card">
+            <div class="card-header">Editar </div>
+              <div class="card-body">
+                <form class="" action="/actualizar/<%= data.id %>" method="POST">
+                  <div class="form-group">
+                    <label for="">ID</label>
+                    <input type="text" name="id" value="<%= data.Activo %>" class="form-control">
+                    <label for="">Activo</label>
+                    <input type="text" name="Activo" value="<%= data.Activo %>" class="form-control">
+                    <label for="">Administrado</label>
+                    <input type="text" name="Administrado" value="<%= data.Administrador %>" class="form-control">
+                    <label for="">Mantenimiento</label>
+                    <input type="text" name="Mantenimiento" value="<%= data.Mantenimiento %>" class="form-control">
+                    <label for="">Estado</label>
+                    <input type="text" name="Estado" value="<%= data.Estado %>" class="form-control">
+                    <label for="">Longitud</label>
+                    <input type="text" name="Longitud" value="<%= data.Longitud %>" class="form-control">
+                    <label for="">Latitud</label>
+                    <input type="text" name="Latitud" value="<%= data.Latitud %>" class="form-control">
+                    <label for="">Localizacion</label>
+                    <input type="text" name="Localizacion" value="<%= data.Localizacion %>" class="form-control">
+                  </div>
+                  <div class="">
+                    <input type="submit"  value="Actualizar" class="btn btn-primary btn-block">
+                  </div>
+                </form>
+
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+
+
+<% include  partes/pie %>

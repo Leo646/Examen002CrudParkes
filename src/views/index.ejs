@@ -1,0 +1,90 @@
+<% include partes/cabecera%>
+<nav class="navbar navbar-dark bg-dark mb-4">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a href="/" class="navbar-brand">Inicio</a>
+      <a href="/modelo" class="navbar-brand">Consultas</a>
+
+    </li>
+  </ul>
+
+
+</nav>
+
+    <div class="container">
+      <div class="row mt-5">
+
+          <table class="table table-bordered">
+            <thead> <!--  cabecera -->
+              <!--fila  -->
+              <tr>
+                <!-- atributos o cabeceras -->
+                <th>ID</th>
+                <th>Activo</th>
+                <th>Administrador</th>
+                <th>Mantenimiento</th>
+                <th>Estado</th>
+                <th>Longitud</th>
+                <th>Latitud</th>
+                <th>Localizacion</th>
+                <th>Opciones</th>
+              </tr>
+            </thead>
+            <!-- cuerpo -->
+            <tbody>
+              <% if(data){ %>
+                 <% for(var i = 0;i < data.length;i++) { %>
+                   <tr>
+                     <td><%= data[i].id%></td>
+                     <td><%= data[i].Activo%></td>
+                     <td><%= data[i].Administrador%></td>
+                     <td><%= data[i].Mantenimiento%></td>
+                     <td><%= data[i].Estado%></td>
+                     <td><%= data[i].Longitud%></td>
+                     <td><%= data[i].Latitud%></td>
+                     <td><%= data[i].Localizacion%></td>
+                     <td> <a href="/borrar/<%= data[i].id %>" class="btn btn-outline-danger form-control  ">Borrar</a>
+                          <a href="/actualizar/<%= data[i].id %>" class="btn btn-outline-success form-control">actualizar</a>
+                     </td>
+                   </tr>
+                   <% } %>
+              <% } %>
+
+            </tbody>
+
+          </table>
+        </div>
+
+            <div class="card">
+              <div class="card-header">Registrar </div>
+                <div class="card-body">
+                  <form class="" action="/Insertar" method="POST">
+                    <div class="form-group">
+                      <label for="">ID</label>
+                      <input type="number" name="id" value="" class="form-control">
+                      <label for="">Activo</label>
+                      <input type="text" name="Activo" value="" class="form-control">
+                      <label for="">Administrador</label>
+                      <input type="text" name="Administrador" value="" class="form-control">
+                      <label for="">Mantenimiento</label>
+                      <input type="text" name="Mantenimiento" value="" class="form-control">
+                      <label for="">Estado</label>
+                      <input type="text" name="Estado" value="" class="form-control">
+                      <label for="">Longitu</label>
+                      <input type="text" name="Longitud" value="" class="form-control">
+                      <label for="">Latitud</label>
+                      <input type="text" name="Latitud" value="" class="form-control">
+                      <label for="">Localizacion</label>
+                      <input type="text" name="Localizacion" value="" class="form-control">
+                    </div>
+                    <div class="">
+                      <input type="submit"  value="Insertar" class="btn btn-primary btn-block">
+                    </div>
+                  </form>
+
+                </div>
+
+        </div>
+      </div>
+    </div>
+<% include  partes/pie %>

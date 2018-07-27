@@ -1,0 +1,28 @@
+<% include partes/cabecera%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-5">
+          <div class="card">
+            <div class="card-header">Editar </div>
+              <div class="card-body">
+                <form class="" action="/modelo/consulta1/actualizar1/<%= data.id %>" method="POST">
+                  <div class="form-group">
+                    <label for="">Nombre del paciente</label>
+                    <input type="text" name="nombres_paciente" value="<%= data.Activo %>" class="form-control">
+                    <label for="">Institucion</label>
+                    <input type="text" name="institucion" value="<%= data.institucion %>" class="form-control">
+                  </div>
+                  <div class="">
+                    <input type="submit"  value="Actualizar" class="btn btn-primary btn-block">
+                  </div>
+                </form>
+
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+
+
+<% include  partes/pie %>
